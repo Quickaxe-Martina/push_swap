@@ -80,7 +80,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/qmartina/CLionProjects/push_swap/main.c">
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/inc/push_swap.h">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/add_index.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/cheak.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/error_ps.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/list_push_swap.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/main.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/markup.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/CMakeLists.txt">

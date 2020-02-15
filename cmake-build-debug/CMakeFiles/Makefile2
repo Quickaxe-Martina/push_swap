@@ -74,12 +74,12 @@ preinstall:
 CMakeFiles/push_swap.dir/all:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/depend
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/qmartina/CLionProjects/push_swap/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target push_swap"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/qmartina/CLionProjects/push_swap/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target push_swap"
 .PHONY : CMakeFiles/push_swap.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/push_swap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/CLionProjects/push_swap/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/CLionProjects/push_swap/cmake-build-debug/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/push_swap.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/CLionProjects/push_swap/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/push_swap.dir/rule
