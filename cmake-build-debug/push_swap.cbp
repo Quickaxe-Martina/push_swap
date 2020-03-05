@@ -101,6 +101,12 @@
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/markup.c">
 			<Option target="push_swap"/>
 		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/operations.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/sort.c">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

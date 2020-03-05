@@ -285,6 +285,60 @@ src/markup.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/markup.c.s
 .PHONY : src/markup.c.s
 
+src/operations.o: src/operations.c.o
+
+.PHONY : src/operations.o
+
+# target to build an object file
+src/operations.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/operations.c.o
+.PHONY : src/operations.c.o
+
+src/operations.i: src/operations.c.i
+
+.PHONY : src/operations.i
+
+# target to preprocess a source file
+src/operations.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/operations.c.i
+.PHONY : src/operations.c.i
+
+src/operations.s: src/operations.c.s
+
+.PHONY : src/operations.s
+
+# target to generate assembly for a file
+src/operations.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/operations.c.s
+.PHONY : src/operations.c.s
+
+src/sort.o: src/sort.c.o
+
+.PHONY : src/sort.o
+
+# target to build an object file
+src/sort.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/sort.c.o
+.PHONY : src/sort.c.o
+
+src/sort.i: src/sort.c.i
+
+.PHONY : src/sort.i
+
+# target to preprocess a source file
+src/sort.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/sort.c.i
+.PHONY : src/sort.c.i
+
+src/sort.s: src/sort.c.s
+
+.PHONY : src/sort.s
+
+# target to generate assembly for a file
+src/sort.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/sort.c.s
+.PHONY : src/sort.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -312,6 +366,12 @@ help:
 	@echo "... src/markup.o"
 	@echo "... src/markup.i"
 	@echo "... src/markup.s"
+	@echo "... src/operations.o"
+	@echo "... src/operations.i"
+	@echo "... src/operations.s"
+	@echo "... src/sort.o"
+	@echo "... src/sort.i"
+	@echo "... src/sort.s"
 .PHONY : help
 
 

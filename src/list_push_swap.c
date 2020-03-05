@@ -42,6 +42,16 @@ t_stack		*add_list_ps(t_stack *head, int nbr, int flag)
 	return (q);
 }
 
+t_stack	*last_list_ps(t_stack *head)
+{
+	t_stack *q;
+
+	q = head;
+	while (q && q->next)
+		q = q->next;
+	return (q);
+}
+
 int 	free_list_ps(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp;

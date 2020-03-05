@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/qmartina/CLionProjects/push_swap/src/list_push_swap.c" "/Users/qmartina/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/list_push_swap.c.o"
   "/Users/qmartina/CLionProjects/push_swap/src/main.c" "/Users/qmartina/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/main.c.o"
   "/Users/qmartina/CLionProjects/push_swap/src/markup.c" "/Users/qmartina/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/markup.c.o"
+  "/Users/qmartina/CLionProjects/push_swap/src/operations.c" "/Users/qmartina/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/operations.c.o"
+  "/Users/qmartina/CLionProjects/push_swap/src/sort.c" "/Users/qmartina/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/sort.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

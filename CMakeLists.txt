@@ -10,4 +10,6 @@ add_executable(push_swap
         src/error_ps.c
         src/cheak.c
         src/add_index.c
-        src/markup.c)
+        src/markup.c
+        src/operations.c
+        src/sort.c)

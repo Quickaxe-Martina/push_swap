@@ -26,7 +26,7 @@ void	error_ps(int error)
 	}
 	else if (error == 3)
 	{
-		dprintf(2, "push_swap: have dublicate\n");/////////
+		dprintf(2, "push_swap: have a dublicate\n");/////////
 		exit(1);
 	}
 }

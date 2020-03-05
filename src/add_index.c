@@ -44,5 +44,5 @@ int 	add_index(t_stack *head)
 		tmp->index = i;
 		i++;
 	}
-	return (1);
+	return (i);
 }

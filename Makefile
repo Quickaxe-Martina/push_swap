@@ -34,6 +34,8 @@ SRC_BASE = main.c\
 	cheak.c\
 	add_index.c\
 	markup.c\
+	operations.c\
+	sort.c\
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRC_BASE:.c=.o))

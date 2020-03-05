@@ -19,6 +19,14 @@
 #include <unistd.h>
 #include "../libft/libft.h"
 
+# define RED			"\033[31m"
+# define GREEN		"\033[32m"
+# define YELLOW		"\033[33m"
+# define BLUE		"\033[34m"
+# define PURPLE		"\033[35m"
+# define CYAN		"\033[36m"
+# define EOC			"\033[0m"
+
 typedef struct		s_stack
 {
 	int 			nbr;
@@ -38,6 +46,7 @@ void		error_ps(int error);
 */
 t_stack		*add_list_ps(t_stack *head, int nbr, int flag);
 int 		free_list_ps(t_stack *a, t_stack *b);
+t_stack	*last_list_ps(t_stack *head);
 /*
  * print
  */
@@ -52,5 +61,17 @@ int 		check_duplicate(t_stack *head, int nbr);
 /////////////
 int 	add_index(t_stack *head);
 int 	mark_index(t_stack *head);
+int 	mark_index2(t_stack *head);
+void		push(t_stack **out, t_stack **in);
+void		rotate(t_stack **head);
+void		rev_rotate(t_stack **head);
+void		swap(t_stack **head);
+void		go_lastchunk(t_stack **a, t_stack **b, int max);
+int 	cheak_sort(t_stack *head);
+int 	cheak_backsort(t_stack *head);
+int 	len_stk(t_stack *head);
+void		go_outb_up(t_stack **a, t_stack **b, int i);
+void		go_outb_down(t_stack **a, t_stack **b, int i);
+int 		up_or_down(t_stack *b, int i);
 
 #endif
