@@ -17,9 +17,10 @@ int 		up_or_down(t_stack *b, int i)
 	t_stack *tmp;
 	int		k;
 
+//	ft_putstr(RED"UP_OR_DOWN\n"EOC);
 	tmp = b;
 	k = 0;
-	while (tmp->index != i)
+	while (tmp && tmp->index != i)
 	{
 		k++;
 		tmp = tmp->next;
@@ -29,62 +30,223 @@ int 		up_or_down(t_stack *b, int i)
 	return (0);
 }
 
+int 		is_vseok(t_stack *b, int i)
+{
+	t_stack		*tmp;
+	int 		f;
+
+	tmp = b;
+	f = 0;
+	while (tmp && tmp->index != i)
+	{
+		if (tmp->index == i - 1)
+			f += 1;
+		if (tmp->index == i - 2)
+			f += 2;
+		if (tmp->index == i - 3)
+			f += 100;
+		tmp = tmp->next;
+	}
+	if (f == 103)
+		return (3);
+	if (f == 3)
+		return (2);
+	if (f == 1)
+		return (1);
+	return (0);
+}
+
+void		find_i(t_stack **b, int i, int j)
+{
+	while ((*b)->index > i || (*b)->index < j)
+		rotate(b);
+}
+
 void		go_outb_up(t_stack **a, t_stack **b, int i)
 {
-	while ((*b)->index != i && (*b)->index != i - 1)
-		rotate(b);
-	if ((*b)->index == i - 1)
+	int 	f;
+	int 	k;
+	int		w;
+	int 	ok;
+
+	f = 0;
+	k = 0;
+	w = 0;
+	ok = is_vseok(*b, i);
+	while (1)
 	{
-		push(b, a);
-		while ((*b)->index != i)
-			rotate(b);
-		push(b, a);
-		swap(a);
+		find_i(b, i, i - ok);
+		if ((*b)->index == i - 3)
+		{
+			w = 1;
+			push(b, a);
+			rotate(a);
+		}
+		else if ((*b)->index == i - 2)
+		{
+			f = 1;
+			push(b, a);
+			rotate(a);
+		}
+		else if ((*b)->index == i - 1)
+		{
+			k = 1;
+			push(b, a);
+		}
+		else if ((*b)->index == i)
+		{
+			push(b, a);
+			if (k == 1)
+				swap(a);
+			if (f == 1)
+				rev_rotate(a);
+			if (w == 1)
+			{
+				rev_rotate(a);
+				if ((*a)->index > (*a)->next->index)
+					swap(a);
+			}
+			break ;
+		}
 	}
-	else
-		push(b, a);
+}
+
+t_stack 	*find_i_down(t_stack  **b, int i, int j)
+{
+	t_stack *last;
+
+	last = last_list_ps(*b);
+	while (last->index > i || last->index < j)
+	{
+		rev_rotate(b);
+		last = last_list_ps(*b);
+	}
+	return (last);
+}
+
+int 		is_vseok_down(t_stack *b, int i)
+{
+	t_stack		*tmp;
+	int 		f;
+
+	tmp = b;
+	f = 0;
+	while (tmp && tmp->index != i)
+		tmp = tmp->next;
+	while (tmp)
+	{
+		if (tmp->index == i - 1)
+			f += 1;
+		if (tmp->index == i - 2)
+			f += 2;
+		if (tmp->index == i - 3)
+			f += 100;
+		tmp = tmp->next;
+	}
+	if (f == 103)
+		return (3);
+	if (f == 3)
+		return (2);
+	if (f == 1)
+		return (1);
+	return (0);
 }
 
 void		go_outb_down(t_stack **a, t_stack **b, int i)
 {
 	t_stack *last;
+	int 	f;
+	int 	k;
+	int		w;
+	int 	ok;
 
-//	ft_putstr(RED"START\n");
-	last = last_list_ps(*b);
-	while (last->index != i && last->index != i - 1)
+	f = 0;
+	k = 0;
+	w = 0;
+	ok = is_vseok_down(*b, i);
+	while (1)
 	{
-		rev_rotate(b);
-		last = last_list_ps(*b);
-	}
-	if (last->index == i - 1)
-	{
-		rev_rotate(b);
-		push(b, a);
-		last = last_list_ps(*b);
-		while (last->index != i)
+		last = find_i_down(b, i, i - ok);
+		if (last->index == i - 3)
+		{
+			w = 1;
+			rev_rotate(b);
+			push(b, a);
+			rotate(a);
+		}
+		else if (last->index == i - 2)
+		{
+			f = 1;
+			rev_rotate(b);
+			push(b, a);
+			rotate(a);
+		}
+		else if (last->index == i - 1)
+		{
+			k = 1;
+			rev_rotate(b);
+			push(b, a);
+		}
+		else if (last->index == i)
 		{
 			rev_rotate(b);
-			last = last_list_ps(*b);
+			push(b, a);
+			if (k == 1)
+				swap(a);
+			if (f == 1)
+				rev_rotate(a);
+			if (w == 1)
+			{
+				rev_rotate(a);
+				if ((*a)->index > (*a)->next->index)
+					swap(a);
+			}
+			break ;
 		}
-		rev_rotate(b);
-		push(b, a);
-		swap(a);
 	}
-	else
-	{
-		rev_rotate(b);
-		push(b, a);
-	}
-//	ft_putstr("END\n"EOC);
 }
 
+void		sort5(t_stack **head)
+{
+	t_stack *a;
+
+	a = NULL;
+	push(head, &a);
+	push(head, &a);
+	swap(head);
+	swap(&a);
+	rotate(head);
+	rotate(head);
+	push(&a, head);
+	push(&a, head);
+	rotate(head);
+	rotate(head);
+}
 
 void		sort4(t_stack **head)
 {
-	swap(head);
-	rev_rotate(head);
-	rev_rotate(head);
-	swap(head);
+	t_stack *a;
+
+	a = NULL;
+	push(head, &a);
+	sort3(head);
+	push(&a, head);
+	add_index_mark(head);
+	if ((*head)->markup == 1)
+		swap(head);
+	else if ((*head)->markup == 2)
+	{
+		rev_rotate(head);
+		swap(head);
+		rotate(head);
+		rotate(head);
+	}
+	else if ((*head)->markup == 3)
+		rotate(head);
+//	swap(head);
+//	rev_rotate(head);
+//	rev_rotate(head);
+//	swap(head);
 }
 
 void		sort3(t_stack **head)
@@ -97,11 +259,9 @@ void		sort3(t_stack **head)
 
 void		go_lastchunk(t_stack **a, t_stack **b, int max)
 {
-	int 		min;
 	int 		l;
 	int 		i;
 
-	min = ((max / 4) * 3) + (max % 4);/////////
 	l = 0;
 	i = max - 1;
 //	printf("max= %d\nmin= %d\nl= %d\n", max, min, l);
@@ -130,6 +290,8 @@ void		go_lastchunk(t_stack **a, t_stack **b, int max)
 		sort3(a);
 	else if (len_stk(*a) == 4)
 		sort4(a);
+	else if (len_stk(*a) == 5)
+		sort5(a);
 //	else if (len_stk(*a) == 5)
 //		sort3(a);
 //	printf(RED"i = %d\n"EOC, i);

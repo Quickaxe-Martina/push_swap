@@ -36,60 +36,36 @@ void	print_list_ps(t_stack *a, t_stack *b)
 	dprintf(1, YELLOW"**************************************\n"EOC);
 }
 
-int 	cheak_backsort(t_stack *head)
+void	psevdo_quick(t_stack **a, t_stack **b, int i)
 {
-	t_stack *q;
-
-	q = head;
-	while (q && q->next)
+	while (i > 2)
 	{
-		if (q->nbr < q->next->nbr)
-			return (0);
-		q = q->next;
+
+		i = add_index_mark(a) / 2;
+//		i /= 2;
+//		printf(RED"\n\ni = %d\n"EOC, i);
+		while (!cheak_chank_mark(*a, i))
+		{
+			if ((*a)->markup < i)
+				push(a, b);
+			else
+				rotate(a);
+		}
+//		add_index_mark(a);
+
+//		print_list_ps(*a, *b);
 	}
-	return (1);
-}
-
-int 	cheak_sort(t_stack *head)
-{
-	t_stack *q;
-
-	q = head;
-	while (q && q->next)
+	if (len_stk(*a) == 2)
 	{
-		if (q->nbr > q->next->nbr)
-			return (0);
-		q = q->next;
+		if ((*a)->nbr > (*a)->next->nbr)
+			swap(a);
 	}
-	return (1);
-}
-
-int 	cheak_chank(t_stack *head, int chunk)
-{
-	t_stack *q;
-
-	q = head;
-	while (q && q->next)
-	{
-		if (q->index < chunk)
-			return (0);
-		q = q->next;
-	}
-	return (1);
-}
-
-int 	cheak_mark(t_stack *head)
-{
-	t_stack *q;
-
-	q = head;
-	while (q && q->next)
-	{
-		if (q->markup == 0)
-			return (0);
-		q = q->next;
-	}
-	return (1);
+	else if (len_stk(*a) == 3)
+		sort3(a);
+	else if (len_stk(*a) == 4)
+		sort4(a);
+//	print_list_ps(*a, *b);
+//	exit(1);
 }
 
 int 	len_stk(t_stack *head)
@@ -99,6 +75,8 @@ int 	len_stk(t_stack *head)
 
 	i = 0;
 	q = head;
+	if (head == NULL)
+		return (0);
 	while (q)
 	{
 		q = q->next;
@@ -132,7 +110,8 @@ int		main(int argc, char **argv)
 		}
 	}
 	i = add_index(a);
-	chunk = (i < 500) ? i / 4 : i / 20;/////////////////
+//	psevdo_quick(&a, &b, i);
+	chunk = (i < 500) ? i / CHANK_100 : i / CHANK_500;/////////////////
 	while (chunk < i)
 	{
 		while (!cheak_chank(a, chunk))
@@ -142,16 +121,21 @@ int		main(int argc, char **argv)
 			else
 				rotate(&a);
 		}
-		chunk += (i < 500) ? i / 4 : i / 20;////////////////////
+		chunk += (i < 500) ? i / CHANK_100 : i / CHANK_500;////////////////////
 	}
-//	print_list_ps(a, b);
 	go_lastchunk(&a, &b, i);
-	while (!cheak_sort(a) || b)
+	while (!cheak_sort(a) || len_stk(b) > 0)
 	{
 		i = a->index - 1;
-//		printf("i= %d\n", i);
+		if (len_stk(b) == 1 && b && b->index > i)
+		{
+			push(&b, &a);
+			rotate(&a);
+			break ;
+		}
 		up_or_down(b, i) ? go_outb_up(&a, &b, i) : go_outb_down(&a, &b, i);
 	}
+//	ft_putendl(RED"END"EOC);
 	if (cheak_sort(a) && len_stk(b) == 0)
 		ft_putstr(GREEN"OK"EOC);
 	else

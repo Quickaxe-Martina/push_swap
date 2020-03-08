@@ -44,3 +44,73 @@ int 	check_duplicate(t_stack *head, int nbr)
 	}
 	return (1);
 }
+
+int 	cheak_backsort(t_stack *head)
+{
+	t_stack *q;
+
+	q = head;
+	while (q && q->next)
+	{
+		if (q->nbr < q->next->nbr)
+			return (0);
+		q = q->next;
+	}
+	return (1);
+}
+
+int 	cheak_sort(t_stack *head)
+{
+	t_stack *q;
+
+	q = head;
+	while (q && q->next)
+	{
+		if (q->nbr > q->next->nbr)
+			return (0);
+		q = q->next;
+	}
+	return (1);
+}
+
+int 	cheak_chank(t_stack *head, int chunk)
+{
+	t_stack *q;
+
+	q = head;
+	while (q && q->next)
+	{
+		if (q->index < chunk)
+			return (0);
+		q = q->next;
+	}
+	return (1);
+}
+
+int 	cheak_chank_mark(t_stack *head, int chunk)
+{
+	t_stack *q;
+
+	q = head;
+	while (q && q->next)
+	{
+		if (q->markup < chunk)
+			return (0);
+		q = q->next;
+	}
+	return (1);
+}
+
+int 	cheak_mark(t_stack *head)
+{
+	t_stack *q;
+
+	q = head;
+	while (q && q->next)
+	{
+		if (q->markup == 0)
+			return (0);
+		q = q->next;
+	}
+	return (1);
+}
