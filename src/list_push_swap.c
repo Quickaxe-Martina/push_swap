@@ -20,7 +20,7 @@ t_stack		*add_list_ps(t_stack *head, int nbr, int flag)
 	if (head == NULL)
 	{
 		if (!(new = (t_stack *)malloc(sizeof(t_stack))))
-			error_ps(1);
+			error_ps(1, NULL);
 		new->nbr = nbr;
 		new->flag = flag;
 		new->index = -1;
@@ -32,7 +32,7 @@ t_stack		*add_list_ps(t_stack *head, int nbr, int flag)
 	while (head->next)
 		head = head->next;
 	if (!(new = (t_stack *)malloc(sizeof(t_stack))))
-		error_ps(1);
+		error_ps(1, NULL);
 	new->nbr = nbr;
 	new->flag = flag;
 	new->index = -1;
@@ -52,21 +52,16 @@ t_stack	*last_list_ps(t_stack *head)
 	return (q);
 }
 
-int 	free_list_ps(t_stack *a, t_stack *b)
+int 	free_list_ps(t_stack **a)
 {
 	t_stack	*tmp;
 
-	while (a)
+	while (*a)
 	{
-		tmp = a;
-		a = a->next;
+		tmp = *a;
+		*a = (*a)->next;
 		free(tmp);
 	}
-	while (b)
-	{
-		tmp = b;
-		b = b->next;
-		free(tmp);
-	}
-	return (1);
+	*a = NULL;
+	return (0);
 }

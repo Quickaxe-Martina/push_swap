@@ -177,6 +177,33 @@ src/cheak.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/cheak.c.s
 .PHONY : src/cheak.c.s
 
+src/checker.o: src/checker.c.o
+
+.PHONY : src/checker.o
+
+# target to build an object file
+src/checker.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/checker.c.o
+.PHONY : src/checker.c.o
+
+src/checker.i: src/checker.c.i
+
+.PHONY : src/checker.i
+
+# target to preprocess a source file
+src/checker.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/checker.c.i
+.PHONY : src/checker.c.i
+
+src/checker.s: src/checker.c.s
+
+.PHONY : src/checker.s
+
+# target to generate assembly for a file
+src/checker.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/checker.c.s
+.PHONY : src/checker.c.s
+
 src/error_ps.o: src/error_ps.c.o
 
 .PHONY : src/error_ps.o
@@ -231,60 +258,6 @@ src/list_push_swap.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/list_push_swap.c.s
 .PHONY : src/list_push_swap.c.s
 
-src/main.o: src/main.c.o
-
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/main.c.o
-.PHONY : src/main.c.o
-
-src/main.i: src/main.c.i
-
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/main.c.i
-.PHONY : src/main.c.i
-
-src/main.s: src/main.c.s
-
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/main.c.s
-.PHONY : src/main.c.s
-
-src/markup.o: src/markup.c.o
-
-.PHONY : src/markup.o
-
-# target to build an object file
-src/markup.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/markup.c.o
-.PHONY : src/markup.c.o
-
-src/markup.i: src/markup.c.i
-
-.PHONY : src/markup.i
-
-# target to preprocess a source file
-src/markup.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/markup.c.i
-.PHONY : src/markup.c.i
-
-src/markup.s: src/markup.c.s
-
-.PHONY : src/markup.s
-
-# target to generate assembly for a file
-src/markup.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/markup.c.s
-.PHONY : src/markup.c.s
-
 src/operations.o: src/operations.c.o
 
 .PHONY : src/operations.o
@@ -311,6 +284,33 @@ src/operations.s: src/operations.c.s
 src/operations.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/operations.c.s
 .PHONY : src/operations.c.s
+
+src/push_swap.o: src/push_swap.c.o
+
+.PHONY : src/push_swap.o
+
+# target to build an object file
+src/push_swap.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap.c.o
+.PHONY : src/push_swap.c.o
+
+src/push_swap.i: src/push_swap.c.i
+
+.PHONY : src/push_swap.i
+
+# target to preprocess a source file
+src/push_swap.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap.c.i
+.PHONY : src/push_swap.c.i
+
+src/push_swap.s: src/push_swap.c.s
+
+.PHONY : src/push_swap.s
+
+# target to generate assembly for a file
+src/push_swap.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap.c.s
+.PHONY : src/push_swap.c.s
 
 src/sort.o: src/sort.c.o
 
@@ -354,21 +354,21 @@ help:
 	@echo "... src/cheak.o"
 	@echo "... src/cheak.i"
 	@echo "... src/cheak.s"
+	@echo "... src/checker.o"
+	@echo "... src/checker.i"
+	@echo "... src/checker.s"
 	@echo "... src/error_ps.o"
 	@echo "... src/error_ps.i"
 	@echo "... src/error_ps.s"
 	@echo "... src/list_push_swap.o"
 	@echo "... src/list_push_swap.i"
 	@echo "... src/list_push_swap.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/markup.o"
-	@echo "... src/markup.i"
-	@echo "... src/markup.s"
 	@echo "... src/operations.o"
 	@echo "... src/operations.i"
 	@echo "... src/operations.s"
+	@echo "... src/push_swap.o"
+	@echo "... src/push_swap.i"
+	@echo "... src/push_swap.s"
 	@echo "... src/sort.o"
 	@echo "... src/sort.i"
 	@echo "... src/sort.s"

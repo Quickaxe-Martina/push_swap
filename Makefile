@@ -28,12 +28,11 @@ SRC_DIR		=	src/
 INC_DIR		=	inc/
 OBJ_DIR		=	objs/
 
-SRC_BASE = main.c\
+SRC_BASE = push_swap.c\
 	list_push_swap.c\
 	error_ps.c\
 	cheak.c\
 	add_index.c\
-	markup.c\
 	operations.c\
 	sort.c\
 

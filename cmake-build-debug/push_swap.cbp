@@ -89,19 +89,19 @@
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/cheak.c">
 			<Option target="push_swap"/>
 		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/checker.c">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/error_ps.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/list_push_swap.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/main.c">
-			<Option target="push_swap"/>
-		</Unit>
-		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/markup.c">
-			<Option target="push_swap"/>
-		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/operations.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/push_swap.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/sort.c">

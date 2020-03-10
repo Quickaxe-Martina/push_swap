@@ -12,21 +12,33 @@
 
 #include "../inc/push_swap.h"
 
-void	error_ps(int error)
+void	error_ps(int error, t_stack **a)
 {
+	if (*a)
+		free_list_ps(a);
 	if (error == 1)
 	{
-		dprintf(2, "push_swap: malloc error\n");/////////
+		ft_dprintf(2, "push_swap: malloc error\n");/////////
 		exit(1);
 	}
 	else if (error == 2)
 	{
-		dprintf(2, "push_swap: not a number\n");/////////
+		ft_dprintf(2, "push_swap: not a number\n");/////////
 		exit(1);
 	}
 	else if (error == 3)
 	{
-		dprintf(2, "push_swap: have a dublicate\n");/////////
+		ft_dprintf(2, "push_swap: have a dublicate\n");/////////
+		exit(1);
+	}
+	else if (error == 4)
+	{
+		ft_dprintf(2, "push_swap: number is not int\n");/////////
+		exit(1);
+	}
+	else if (error == 5)
+	{
+		ft_dprintf(2, "push_swap: no arguments\n");
 		exit(1);
 	}
 }

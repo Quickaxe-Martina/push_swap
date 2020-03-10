@@ -29,7 +29,6 @@ int 	add_index(t_stack *head)
 		q = head;
 		while (q)
 		{
-//			printf("tmp: %d\tq: %d\n", tmp->nbr, q->nbr);
 			if (tmp->nbr > q->nbr && q->index == -1)
 			{
 				tmp = q;
@@ -70,7 +69,6 @@ int 	add_index_mark(t_stack **head)
 		q = *head;
 		while (q)
 		{
-//			printf("tmp: %d\tq: %d\n", tmp->nbr, q->nbr);
 			if (tmp->nbr > q->nbr && q->markup == -1)
 			{
 				tmp = q;

@@ -58,7 +58,7 @@ char		**ft_strsplit(char const *s, char c)
 	if (!s)
 		return (NULL);
 	nb = ft_words(s, c);
-	arr = (char**)malloc(sizeof(*arr) * nb + 1);
+	arr = (char**)malloc(sizeof(char*) * (nb + 1));
 	if (!arr)
 		return (NULL);
 	while (i < nb)
@@ -71,6 +71,6 @@ char		**ft_strsplit(char const *s, char c)
 		s = s + ft_wordln(s, c);
 		i++;
 	}
-	arr[i] = 0;
+	arr[i] = NULL;
 	return (arr);
 }
