@@ -12,9 +12,9 @@
 
 #include "../inc/push_swap.h"
 
-int 	check_is_number(char *str)
+int				check_is_number(char *str)
 {
-	int		i;
+	int			i;
 
 	i = -1;
 	if (str[0] == '-' || str[0] == '+')
@@ -29,7 +29,7 @@ int 	check_is_number(char *str)
 	return (1);
 }
 
-int 	check_duplicate(t_stack *head, int nbr)
+int				check_duplicate(t_stack *head, int nbr)
 {
 	t_stack		*q;
 
@@ -45,9 +45,9 @@ int 	check_duplicate(t_stack *head, int nbr)
 	return (1);
 }
 
-int 	cheak_sort(t_stack *head)
+int				cheak_sort(t_stack *head)
 {
-	t_stack *q;
+	t_stack		*q;
 
 	q = head;
 	while (q && q->next)
@@ -59,9 +59,9 @@ int 	cheak_sort(t_stack *head)
 	return (1);
 }
 
-int 	cheak_chank2(t_stack *head, int start, int end)
+int				cheak_chank2(t_stack *head, int start, int end)
 {
-	t_stack *q;
+	t_stack		*q;
 
 	q = head;
 	if (end == -400)
@@ -75,7 +75,7 @@ int 	cheak_chank2(t_stack *head, int start, int end)
 	return (1);
 }
 
-int 	cheak_max_min(char *str, int nbr)
+int				cheak_max_min(char *str, int nbr)
 {
 	if (nbr != -1 && nbr != 0)
 		return (1);

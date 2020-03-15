@@ -12,4 +12,9 @@ add_executable(push_swap
         src/cheak.c
         src/add_index.c
         src/operations.c
-        src/sort.c)
+        src/sort.c
+        src/t1000.c
+        src/operations1.c
+        src/operations2.c
+        src/sort1.c
+        src/sort2.c)

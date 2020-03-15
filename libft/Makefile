@@ -24,22 +24,22 @@ SRC =   ft_atoi.c\
         ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c\
         ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c\
         ft_tolower.c ft_toupper.c\
-        ft_printf/ft_printf.c\
-        ft_printf/ft_add_c_s_d.c\
-        ft_printf/add_char.c\
-        ft_printf/add_str.c\
-        ft_printf/ft_oxu.c\
-        ft_printf/ft_pars.c\
-        ft_printf/ft_pars2.c\
-        ft_printf/ft_pr_help.c\
-        ft_printf/add_buff.c\
-        ft_printf/add_d.c\
-        ft_printf/ft_itoa_base_c.c\
-        ft_printf/ft_add_double.c\
-        ft_printf/ft_okr_double.c\
-        ft_printf/ft_pointer.c\
-        ft_printf/ft_math.c\
-        ft_printf/ft_dtoa.c\
+        ft_printf.c\
+        ft_add_c_s_d.c\
+        add_char.c\
+        add_str.c\
+        ft_oxu.c\
+        ft_pars.c\
+        ft_pars2.c\
+        ft_pr_help.c\
+        add_buff.c\
+        add_d.c\
+        ft_itoa_base_c.c\
+        ft_add_double.c\
+        ft_okr_double.c\
+        ft_pointer.c\
+        ft_math.c\
+        ft_dtoa.c\
         ft_nbrlen.c ft_strjoinch_i.c get_next_line.c get_next_line_with_sym.c
 OBJECT = $(SRC:.c=.o)
 FLAGS = -Wall -Wextra -Werror

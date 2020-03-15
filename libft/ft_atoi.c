@@ -12,21 +12,21 @@
 
 #include "libft.h"
 
-static int ft_is_digit(int c)
+static int			ft_is_digit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
 
-static int ft_is_whitespace(char c)
+static int			ft_is_whitespace(char c)
 {
 	return (c == ' ' || c == '\t' || c == '\n' || \
 	c == '\v' || c == '\f' || c == '\r');
 }
 
-int ft_atoi(const char *str)
+int					ft_atoi(const char *str)
 {
-	int sign;
-	long long int result;
+	int				sign;
+	long long int	result;
 
 	sign = 1;
 	result = 0;

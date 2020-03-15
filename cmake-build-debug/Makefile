@@ -285,6 +285,60 @@ src/operations.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/operations.c.s
 .PHONY : src/operations.c.s
 
+src/operations1.o: src/operations1.c.o
+
+.PHONY : src/operations1.o
+
+# target to build an object file
+src/operations1.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/operations1.c.o
+.PHONY : src/operations1.c.o
+
+src/operations1.i: src/operations1.c.i
+
+.PHONY : src/operations1.i
+
+# target to preprocess a source file
+src/operations1.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/operations1.c.i
+.PHONY : src/operations1.c.i
+
+src/operations1.s: src/operations1.c.s
+
+.PHONY : src/operations1.s
+
+# target to generate assembly for a file
+src/operations1.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/operations1.c.s
+.PHONY : src/operations1.c.s
+
+src/operations2.o: src/operations2.c.o
+
+.PHONY : src/operations2.o
+
+# target to build an object file
+src/operations2.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/operations2.c.o
+.PHONY : src/operations2.c.o
+
+src/operations2.i: src/operations2.c.i
+
+.PHONY : src/operations2.i
+
+# target to preprocess a source file
+src/operations2.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/operations2.c.i
+.PHONY : src/operations2.c.i
+
+src/operations2.s: src/operations2.c.s
+
+.PHONY : src/operations2.s
+
+# target to generate assembly for a file
+src/operations2.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/operations2.c.s
+.PHONY : src/operations2.c.s
+
 src/push_swap.o: src/push_swap.c.o
 
 .PHONY : src/push_swap.o
@@ -339,6 +393,87 @@ src/sort.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/sort.c.s
 .PHONY : src/sort.c.s
 
+src/sort1.o: src/sort1.c.o
+
+.PHONY : src/sort1.o
+
+# target to build an object file
+src/sort1.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/sort1.c.o
+.PHONY : src/sort1.c.o
+
+src/sort1.i: src/sort1.c.i
+
+.PHONY : src/sort1.i
+
+# target to preprocess a source file
+src/sort1.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/sort1.c.i
+.PHONY : src/sort1.c.i
+
+src/sort1.s: src/sort1.c.s
+
+.PHONY : src/sort1.s
+
+# target to generate assembly for a file
+src/sort1.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/sort1.c.s
+.PHONY : src/sort1.c.s
+
+src/sort2.o: src/sort2.c.o
+
+.PHONY : src/sort2.o
+
+# target to build an object file
+src/sort2.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/sort2.c.o
+.PHONY : src/sort2.c.o
+
+src/sort2.i: src/sort2.c.i
+
+.PHONY : src/sort2.i
+
+# target to preprocess a source file
+src/sort2.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/sort2.c.i
+.PHONY : src/sort2.c.i
+
+src/sort2.s: src/sort2.c.s
+
+.PHONY : src/sort2.s
+
+# target to generate assembly for a file
+src/sort2.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/sort2.c.s
+.PHONY : src/sort2.c.s
+
+src/t1000.o: src/t1000.c.o
+
+.PHONY : src/t1000.o
+
+# target to build an object file
+src/t1000.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/t1000.c.o
+.PHONY : src/t1000.c.o
+
+src/t1000.i: src/t1000.c.i
+
+.PHONY : src/t1000.i
+
+# target to preprocess a source file
+src/t1000.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/t1000.c.i
+.PHONY : src/t1000.c.i
+
+src/t1000.s: src/t1000.c.s
+
+.PHONY : src/t1000.s
+
+# target to generate assembly for a file
+src/t1000.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/t1000.c.s
+.PHONY : src/t1000.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -366,12 +501,27 @@ help:
 	@echo "... src/operations.o"
 	@echo "... src/operations.i"
 	@echo "... src/operations.s"
+	@echo "... src/operations1.o"
+	@echo "... src/operations1.i"
+	@echo "... src/operations1.s"
+	@echo "... src/operations2.o"
+	@echo "... src/operations2.i"
+	@echo "... src/operations2.s"
 	@echo "... src/push_swap.o"
 	@echo "... src/push_swap.i"
 	@echo "... src/push_swap.s"
 	@echo "... src/sort.o"
 	@echo "... src/sort.i"
 	@echo "... src/sort.s"
+	@echo "... src/sort1.o"
+	@echo "... src/sort1.i"
+	@echo "... src/sort1.s"
+	@echo "... src/sort2.o"
+	@echo "... src/sort2.i"
+	@echo "... src/sort2.s"
+	@echo "... src/t1000.o"
+	@echo "... src/t1000.i"
+	@echo "... src/t1000.s"
 .PHONY : help
 
 

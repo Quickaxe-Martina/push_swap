@@ -12,17 +12,16 @@
 
 #include "../inc/push_swap.h"
 
-t_stack		*add_list_ps(t_stack *head, int nbr, int flag)
+t_stack			*add_list_ps(t_stack *head, int nbr)
 {
 	t_stack		*new;
-	t_stack 	*q;
+	t_stack		*q;
 
 	if (head == NULL)
 	{
 		if (!(new = (t_stack *)malloc(sizeof(t_stack))))
 			error_ps(1, NULL);
 		new->nbr = nbr;
-		new->flag = flag;
 		new->index = -1;
 		new->markup = -1;
 		new->next = NULL;
@@ -34,7 +33,6 @@ t_stack		*add_list_ps(t_stack *head, int nbr, int flag)
 	if (!(new = (t_stack *)malloc(sizeof(t_stack))))
 		error_ps(1, NULL);
 	new->nbr = nbr;
-	new->flag = flag;
 	new->index = -1;
 	new->markup = -1;
 	new->next = NULL;
@@ -42,9 +40,9 @@ t_stack		*add_list_ps(t_stack *head, int nbr, int flag)
 	return (q);
 }
 
-t_stack	*last_list_ps(t_stack *head)
+t_stack			*last_list_ps(t_stack *head)
 {
-	t_stack *q;
+	t_stack		*q;
 
 	q = head;
 	while (q && q->next)
@@ -52,9 +50,9 @@ t_stack	*last_list_ps(t_stack *head)
 	return (q);
 }
 
-int 	free_list_ps(t_stack **a)
+int				free_list_ps(t_stack **a)
 {
-	t_stack	*tmp;
+	t_stack		*tmp;
 
 	while (*a)
 	{
@@ -64,4 +62,21 @@ int 	free_list_ps(t_stack **a)
 	}
 	*a = NULL;
 	return (0);
+}
+
+int				len_stk(t_stack *head)
+{
+	t_stack		*q;
+	int			i;
+
+	i = 0;
+	q = head;
+	if (head == NULL)
+		return (0);
+	while (q)
+	{
+		q = q->next;
+		i++;
+	}
+	return (i);
 }

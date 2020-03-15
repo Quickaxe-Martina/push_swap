@@ -11,6 +11,7 @@
 # **************************************************************************** #
 
 NAME		=	push_swap
+NAME_CHECKER = 	checker
 
 CC			=	gcc
 FLAGS		=	-Wall -Wextra -Werror
@@ -22,38 +23,52 @@ LIBFT_DIR	=	libft/
 LIBFT_LIB	=	$(LIBFT_DIR)libft.a
 LIBFT_INC	=	$(LIBFT_DIR)libft.h
 
-LIBS		=	-ltermcap
-
 SRC_DIR		=	src/
-INC_DIR		=	inc/
+INC_DIR		=	inc
 OBJ_DIR		=	objs/
 
-SRC_BASE = push_swap.c\
-	list_push_swap.c\
-	error_ps.c\
-	cheak.c\
-	add_index.c\
-	operations.c\
-	sort.c\
+SRC_BASE = \
+    list_push_swap.c\
+    error_ps.c\
+    cheak.c\
+    add_index.c\
+    operations.c\
+    operations1.c\
+    operations2.c\
+    sort.c\
+    sort1.c\
+    sort2.c\
+    t1000.c\
 
-SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))
+SRC_PUSH_SWAP = push_swap.c
+
+SRC_CHECKER = checker.c
+
+
+SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE), $(SRC_CHECKER))
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRC_BASE:.c=.o))
-NB			=	$(words $(SRC_BASE))
+OBJSPS      =   $(addprefix $(OBJ_DIR), $(SRC_PUSH_SWAP:.c=.o))
+OBJSCH      =   $(addprefix $(OBJ_DIR), $(SRC_CHECKER:.c=.o))
+NB			=	$(words $(SRC_BASE), $(SRC_CHECKER))
 INDEX		=	0
+GREEN = \033[0;32m
+RED = \033[0;31m
+RESET = \033[0m
 
 all :
 	@make -C $(LIBFT_DIR)
 	@make -j $(NAME)
+	@make -j $(NAME_CHECKER)
 
-$(NAME):		$(LIBFT_LIB) $(OBJ_DIR) $(OBJS)
-	@$(CC) $(OBJS) -o $(NAME) \
-		-I $(INC_DIR) \
-		-I $(LIBFT_INC) \
-		$(LIBS) \
-		$(LIBFT_LIB) \
-		$(FLAGS) $(D_FLAGS)
+$(NAME): $(LIBFT_LIB) $(OBJ_DIR) $(OBJS) $(OBJSPS)
+	@$(CC) $(OBJS) $(OBJSPS) -o $(NAME) -I  $(INC_DIR) -I $(LIBFT_DIR) $(LIBS) $(LIBFT_LIB) $(FLAGS) $(D_FLAGS)
 	@strip -x $@
-	@printf "\r\033[48;5;15;38;5;25m✅ MAKE $(NAME)\033[0m\033[K\n"
+	@echo "✅ $(GREEN)MAKE $(NAME)$(RESET)"
+
+$(NAME_CHECKER): $(LIBFT_LIB) $(OBJ_DIR) $(OBJS) $(OBJSCH)
+	@$(CC)  $(OBJS) $(OBJSCH) -o $(NAME_CHECKER) -I $(INC_DIR) -I $(LIBFT_DIR) $(LIBS) $(LIBFT_LIB) $(FLAGS) $(D_FLAGS)
+	@strip -x $@
+	@echo "✅ $(GREEN)MAKE $(NAME_CHECKER)$(RESET)"
 
 $(LIBFT_LIB):
 	@make -C $(LIBFT_DIR)
@@ -62,27 +77,19 @@ $(OBJ_DIR) :
 	@mkdir -p $(OBJ_DIR)
 	@mkdir -p $(dir $(OBJS))
 
-$(OBJ_DIR)%.o :	$(SRC_DIR)%.c | $(OBJ_DIR)
-	@$(eval DONE=$(shell echo $$(($(INDEX)*20/$(NB)))))
-	@$(eval PERCENT=$(shell echo $$(($(INDEX)*100/$(NB)))))
-	@$(eval COLOR=$(shell echo $$(($(PERCENT)%35+196))))
-	@$(eval TO_DO=$(shell echo $$((20-$(INDEX)*20/$(NB)))))
-	@printf "\r\033[38;5;11m⌛ MAKE %10.10s : %2d%% \033[48;5;%dm%*s\033[0m%*s\033[48;5;255m \033[0m \033[38;5;11m %*.*s\033[0m\033[K" $(NAME) $(PERCENT) $(COLOR) $(DONE) "" $(TO_DO) "" $(DELTA) $(DELTA) "$@"
-	@$(CC) $(FLAGS) $(D_FLAGS) -MMD -c $< -o $@\
-		-I $(INC_DIR)\
-		-I $(LIBFT_INC)
-	@$(eval INDEX=$(shell echo $$(($(INDEX)+1))))
+$(OBJ_DIR)%.o :	$(SRC_DIR)%.c $(OBJ_DIR) inc/push_swap.h
+	@$(CC) $(FLAGS) $(D_FLAGS) -MMD -c $< -o $@ -I $(INC_DIR) -I $(LIBFT_INC)
 
 clean:			cleanlib
 	@rm -rf $(OBJ_DIR)
-	@printf "\r\033[38;5;202m✖ clean $(NAME).\033[0m\033[K\n"
+	@echo "❌ $(RED)clean $(NAME) $(NAME_CHECKER)$(RESET)"
 
 cleanlib:
 	@make -C $(LIBFT_DIR) clean
 
 fclean:			clean fcleanlib
-	@rm -f $(NAME)
-	@printf "\r\033[38;5;196m❌ fclean $(NAME).\033[0m\033[K\n"
+	@rm -f $(NAME) $(NAME_CHECKER)
+	@echo "❌ $(RED)fclean $(NAME) $(NAME_CHECKER) $(RESET)"
 
 fcleanlib:		cleanlib
 	@make -C $(LIBFT_DIR) fclean
@@ -91,6 +98,6 @@ re:				fclean all
 
 relib:			fcleanlib $(LIBFT_LIB)
 
-.PHONY :		fclean clean re relib cleanlib fcleanlib
+.PHONY :		fclean clean re relib cleanlib fcleanlib all
 
 -include $(OBJS:.o=.d)

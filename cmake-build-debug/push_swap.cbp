@@ -101,10 +101,25 @@
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/operations.c">
 			<Option target="push_swap"/>
 		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/operations1.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/operations2.c">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/push_swap.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/sort.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/sort1.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/sort2.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/push_swap/src/t1000.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/push_swap/CMakeLists.txt">
